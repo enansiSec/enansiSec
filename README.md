@@ -1,87 +1,87 @@
-# Cybersecurity Adversary Simulation & Detection Lab
+# Hello! I'm Elias.
+<a href="https://www.linkedin.com/in/gelias/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+
+I am an intelligence and security professional with over a decade of experience in intelligence analysis, emergency management, and supporting real-time tactical law enforcement operations. My career has involved domestic and international terrorism investigations and building corporate security intelligence programs for both the public and private sectors.
+
+My work has ranged from tracking emerging threats to developing intelligence workflows that enhance security operations. Now, I am expanding my expertise into cybersecurity, building a home lab focused on adversary simulation, detection engineering, and threat hunting.
+
+This GitHub repository documents my hands-on projects in SIEM integration, web attack analysis, and automated security monitoring as I transition into a technical security role. Through these projects, I continuously refine my technical skills, reinforce cybersecurity fundamentals, and stay current with the latest tools and evolving threats in both offensive and defensive security.
 
 ## Objective
 
-There are so many great resources on how to build a proper cybersecurity lab. Tony Robinson's ["Building Virtual Machine Labs"](https://leanpub.com/avatar2) is choose your own adventure guide on how to set up a lab on Mac, Linux, and Windows with the hypervisor of your own choosing! Content creator Day (aka CyberwoxAcademy) has a [great guide on setting up a Security Onion/Splunk centric homelab](https://cyberwoxacademy.com/building-a-cybersecurity-homelab-for-detection-monitoring/). 
+My transition into cybersecurity is driven by a hands-on approach—learning defense best practices by attacking my defenses. By running offensive security exercises against controlled, vulnerable environments, I am building skills in threat detection, log analysis, forensic analysis, and security monitoring. As I grow, I plan to learn advanced topics such as advanced adversary emulation techniques and detection engineering. 
 
-But I do have to say, I have not seen one with as much breadth as the [10-part beast-of-a-guide](https://blog.davidvarghese.net/posts/building-home-lab-part-1/) by David Varghese. Be warned! Putting this one together is a serious test of one's endurance and patience. I framed my entire lab off of this design. So thank you very much Mr. Varghese for laying down the foundation of this lab!
+## Projects and Lab Expansions
+- Cybersecurity Adversary Simulation & Detection Lab
+- OWASP Juice Shop & Splunk Integration
+- Automated Web Traffic Simulation & Analysis
+- DVWA Security Analysis & SIEM Integration
 
-Some of you who have come may have already put together a lab, only to let it rot afterwards. And when you do decided come back, your documentation is so bad that you may be better off scrapping it altogether! Rather than reinvent the wheel, my main objective here is to make use of your lab after putting it together! As you'll see, I combine a lot of built out resources like OWASP Juice Shop and Damn Vulnerable Web Application (DVWA), get an IPS/IDS installed and configured on the servers, plug them into the SIEM server you will have already built out, attack and then analyze! 
+## **Skills**
+This table outlines the **skills practiced and acquired** while building the above projects.
 
-This cybersecurity homelab is designed to provide hands-on experience in both offensive (Red Team) and defensive (Blue Team) security. The primary goal is to:
+| **Skill**                                      | **Associated Project**                                              |
+|-----------------------------------------------|----------------------------------------------------------------------|
+| **SIEM Integration & Log Analysis**           | OWASP Juice Shop & Splunk Integration, DVWA Security Analysis       |
+| **Threat Detection & Security Monitoring**    | OWASP Juice Shop & Splunk Integration, Automated Web Traffic Simulation |
+| **Network Traffic Analysis**                  | DVWA Security Analysis & SIEM Integration                           |
+| **Web Attack Simulation & Log Correlation**   | DVWA Security Analysis, Automated Web Traffic Simulation            |
+| **Scripting & Security Automation**           | Automated Web Traffic Simulation (Selenium & Playwright)            |
+| **Adversary Behavior Analysis**               | Automated Web Traffic Simulation, OWASP Juice Shop & Splunk Integration |
+| **Incident Response & Digital Forensics**     | DVWA Security Analysis, SIEM Integration                            |
+| **Blue Team Threat Hunting**                  | OWASP Juice Shop & Splunk Integration, DVWA Security Analysis       |
+| **Red Team Attack Simulation**                | Automated Web Traffic Simulation, DVWA Security Analysis            |
+| **Detection Engineering (Emerging Skillset)** | Automated Web Traffic Simulation (Splunk Log Analysis)              |
+| **Web Application Security & Exploitation**   | DVWA Security Analysis, OWASP Juice Shop & Splunk Integration       |
+| **Automated Adversary Simulation**            | Automated Web Traffic Simulation (Selenium & Playwright)            |
+| **Malware Analysis & Threat Hunting**         | Future Expansion - Isolated Malware Analysis Network                |
+## Tools
 
-✅ Develop hands-on Blue Team expertise by setting up and analyzing SIEM logs, network traffic, and endpoint security alerts to understand real-world detection methodologies.
-✅ Simulate real-world adversary tactics to gain insight into how attackers operate while using defensive technologies to monitor, analyze, and mitigate attacks.
-✅ Strengthen cybersecurity fundamentals by deploying and securing critical infrastructure, including web applications, Active Directory, and forensic analysis tools.
-✅ Enhance detection evasion techniques by studying security monitoring tools and identifying gaps in logging, SIEM filtering, and network defenses.
-✅ Build practical cybersecurity experience through offensive and defensive lab exercises, ensuring readiness for both SOC analyst and future Red Team roles.
+### Network & Traffic Analysis
+<div> 
+    <img src="https://img.shields.io/badge/-Wireshark-1679A7?&style=for-the-badge&logo=Wireshark&logoColor=white" /> 
+    <img src="https://img.shields.io/badge/-Nmap-009639?&style=for-the-badge&logo=Nmap&logoColor=white" /> 
+    <img src="https://img.shields.io/badge/-Burp_Suite-FF6F00?&style=for-the-badge&logo=Burp-Suite&logoColor=white" /> 
+</div>
 
-The lab is structured as a multi-subnet network running in VirtualBox, managed by pfSense as the core firewall/router. It includes offensive, defensive, and analysis systems to support both attack simulation and forensic analysis.
-
-## Network Architecture Overview
-
-This lab consists of five core subnets, each designed for a specific purpose:
-
-                   +-------------------+
-                   |  VirtualBox Host  |
-                   +---------+---------+
-                             |
-             +---------------+----------------+
-             |    pfSense Firewall & Router   |
-             +---------------+----------------+
-                             |
-         -------------------------------------------------
-        |            |           |            |           |
-    (Red Team)  (Vuln Lab)  (Blue Team)  (Active Dir) (Malware)
-    Attack Sub  Target Sub   Analysis     AD Subnet    Sandbox
-  
-
-
-### Red Team (Attacking & Management Machine)
-- Hosts Kali Linux as the primary attacking system, also used for managing the lab.
-- Functions as the offensive operations center for penetration testing, reconnaissance, and exploit research.
-
-### Vulnerable Machines (Target Systems)
-- Hosts Metasploitable 2, VulnHub VMs, and a custom Ubuntu server with DVWA and OWASP Juice Shop.
-- Designed for exploit development, vulnerability scanning, and adversary simulation.
-
-### Blue Team (Detection & Forensics)
-- Hosts Tsurugi Linux (Forensic Distro) and Splunk.
-- Used for SIEM log analysis, network forensics, and malware analysis.
-
-### Active Directory (Windows Domain Network)
-- Windows Server 2019 (Domain Controller)
-- Two Windows 10 Enterprise Workstations
-- Used for Active Directory attacks, Kerberoasting, Pass-the-Hash, and AD enumeration.
-
-### Isolated Malware Analysis Network
-- Used for sandboxing malware samples and analyzing behavior.
-- Completely air-gapped from other networks.
-
-## Subprojects
-
-1️⃣ OWASP Juice Shop & Splunk Integration
-Summary: Built a vulnerable web app integrated with Splunk to analyze security threats and attack patterns.
-Key Features:
-  - Configured log forwarding from Juice Shop to Splunk.
-  - Built Splunk dashboards to detect SQL injection, XSS, and brute-force attempts.
-  - Simulated real-world attack traffic and monitored detections.
-Platforms Used: Ubuntu, VirtualBox, Docker, Splunk, OWASP Juice Shop.
-
-2️⃣ Automated Web Traffic Simulation & Analysis
-Summary: Developed AI-assisted traffic bots using Selenium & Playwright to mimic real-world browsing behavior.
-Key Features:
-  - Automated traffic to simulate human-like interactions.
-  - Analyzed bot detection techniques and evasions.
-  - Configured Splunk SIEM to detect anomalies.
-Platforms Used: Ubuntu, Docker, Playwright, Selenium, Splunk.
-
-3️⃣ DVWA Security Analysis & SIEM Integration
-Summary: Conducted web attack simulations against Damn Vulnerable Web App (DVWA) with Splunk log analysis.
-Key Features:
- - Configured SIEM alerts for SQL injection and XSS.
- - Used Burp Suite, Nmap, and Wireshark for deep packet analysis.
- - Simulated brute-force attacks against login forms.
-Platforms Used: Ubuntu, Apache2, MariaDB, Splunk, DVWA.
+### SIEM & Log Analysis
+<div> 
+    <img src="https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white" />       <img src="https://img.shields.io/badge/-Sysmon-6A5ACD?&style=for-the-badge&logo=Windows-Terminal&logoColor=white" /> 
+</div>
 
 
+### Web Security & Automation
+<div> 
+      <img src="https://img.shields.io/badge/-OWASP_ZAP-000000?&style=for-the-badge&logo=OWASP&logoColor=white" /> 
+      <img src="https://img.shields.io/badge/-Selenium-43B02A?&style=for-the-badge&logo=Selenium&logoColor=white" /> 
+      <img src="https://img.shields.io/badge/-Playwright-2C2C2C?&style=for-the-badge&logo=Playwright&logoColor=white" /> </div>
+
+### Offensive Security & Reconnaissance
+<div> 
+    <img src="https://img.shields.io/badge/-Kali_Linux-557C94?&style=for-the-badge&logo=Kali-Linux&logoColor=white" /> 
+    <img src="https://img.shields.io/badge/-TheHarvester-8A2BE2?&style=for-the-badge&logo=TheHarvester&logoColor=white" /> 
+    <img src="https://img.shields.io/badge/-Maltego-005A9C?&style=for-the-badge&logo=Maltego&logoColor=white" /> </div>
+
+### Virtualization & Containerization
+<div> 
+    <img src="https://img.shields.io/badge/-VirtualBox-183A61?&style=for-the-badge&logo=VirtualBox&logoColor=white" /> 
+    <img src="https://img.shields.io/badge/-Docker-2496ED?&style=for-the-badge&logo=Docker&logoColor=white" />       <img src="https://img.shields.io/badge/-WSL2-4D4D4D?&style=for-the-badge&logo=Windows-Terminal&logoColor=white" /> 
+</div>
+
+## Certifications
+[Provide certifications that you have obtained. Use ChatGPT to help create the link - Remove this afterwards]]
+<div>
+<img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+<img src="https://img.shields.io/badge/-Network%2B-007ACC?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+<img src="https://img.shields.io/badge/-A%2B-4D4D4D?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+<img src="https://img.shields.io/badge/-CDSA-006400?&style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/-CCD-000080?&style=for-the-badge&logoColor=white" />
+</div>
+
+
+<div> 
+    <a href="https://www.credly.com/badges/63e56aea-2aa1-44dc-88f1-6219ba6d36ec/public_url"> <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" /> </a> 
+    <a href="https://certs.ine.com/cc7f774a-cc5a-4568-bb0b-7bd9b962f00f#acc.8Opqz2Tu"> <img src="https://img.shields.io/badge/-eJPT-000000?&style=for-the-badge&logo=INE&logoColor=white" /> </a> 
+    <a href="https://www.credly.com/badges/8531d57c-4830-46ad-8949-24518253793d"> <img src="https://img.shields.io/badge/-GCFE-2C3E50?&style=for-the-badge&logo=SANS&logoColor=white" /> </a> 
+    <a href="https://www.credly.com/badges/274e6bf0-51f8-4c27-8260-5ce181699ae3/linked_in_profile"> <img src="https://img.shields.io/badge/-GCTI-008080?&style=for-the-badge&logo=SANS&logoColor=white" /> </a> 
+</div>
