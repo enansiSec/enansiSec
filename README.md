@@ -23,17 +23,18 @@ The lab is structured as a multi-subnet network running in VirtualBox, managed b
 This lab consists of five core subnets, each designed for a specific purpose:
 
                    +-------------------+
-                   |  VirtualBox Host   |
+                   |  VirtualBox Host  |
                    +---------+---------+
                              |
              +---------------+----------------+
-             | pfSense Firewall & Router      |
+             |    pfSense Firewall & Router   |
              +---------------+----------------+
                              |
-    -------------------------------------------------
-    |             |             |            |      |
-  (Red Team)  (Vuln Lab)  (Blue Team)  (Active Dir) (Malware)
-   Attack Sub  Target Sub  Analysis     AD Subnet    Sandbox
+         -------------------------------------------------
+        |            |           |            |           |
+    (Red Team)  (Vuln Lab)  (Blue Team)  (Active Dir) (Malware)
+    Attack Sub  Target Sub   Analysis     AD Subnet    Sandbox
+  
 
 
 ### Red Team (Attacking & Management Machine)
