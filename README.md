@@ -13,9 +13,9 @@ My transition into cybersecurity is driven by a hands-on approach—learning def
 
 ## Projects and Lab Expansions
 - Cybersecurity Adversary Simulation & Detection Lab
-- OWASP Juice Shop & Splunk Integration
-- Automated Web Traffic Simulation & Analysis
-- DVWA Security Analysis & SIEM Integration
+    - OWASP Juice Shop & Splunk Integration
+    - Automated Web Traffic Simulation & Analysis
+    - DVWA Security Analysis & SIEM Integration
 
 ## **Skills**
 This table outlines the **skills practiced and acquired** while building the above projects.
