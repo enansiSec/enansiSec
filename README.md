@@ -12,7 +12,7 @@ This GitHub repository documents my hands-on projects in SIEM integration, web a
 My transition into cybersecurity is driven by a hands-on approach—learning defense best practices by attacking my defenses. By running offensive security exercises against controlled, vulnerable environments, I am building skills in threat detection, log analysis, forensic analysis, and security monitoring. As I grow, I plan to learn advanced topics such as advanced adversary emulation techniques and detection engineering. 
 
 ## Projects and Lab Expansions
-- Cybersecurity Adversary Simulation & Detection Lab
+- [Cybersecurity Adversary Simulation & Detection Lab](https://github.com/enansiSec/Adversary-Simulation-Detection-Lab)
     - OWASP Juice Shop & Splunk Integration
     - Automated Web Traffic Simulation & Analysis
     - DVWA Security Analysis & SIEM Integration
